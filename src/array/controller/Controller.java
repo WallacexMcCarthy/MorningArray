@@ -51,6 +51,21 @@ public class Controller
 		}
 	}
 	
+	private void incertionSort(Double [] numbers)
+	{
+		for ( int outer = 1; outer < numbers.length; outer++)
+		{
+			Double tested = numbers[outer];
+			int inner = outer -1;
+			while (inner >= 0 && tested < numbers[inner])
+			{
+				numbers[inner + 1] = numbers[inner];
+				inner --;
+			}
+			numbers[inner + 1] = tested;
+		}
+	}
+	
 	private void sortStrings()
 	{
 		String [] words = {" hello ", " Comouter ", "science ", " at ", " CTEC ", " rocks ", " fr "};
@@ -149,6 +164,7 @@ public class Controller
 		source [firstIndex] = source[secondIndex];
 		source [secondIndex] = thirdHand;
 	}
+	
 	private int countByConditionDemo(int [] source)
 	{
 		int matching = 0;
